@@ -1,0 +1,64 @@
+<div class="container mx-auto">
+  <div class="row mt-2">
+    <div class="col-md-6">
+
+        <a routerLink="/admin/products" class="btn btn-success"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+
+
+      <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" formControlName="title">
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea class="form-control" id="description" formControlName="description"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="brand" class="form-label">Brand</label>
+          <input type="text" class="form-control" id="brand" formControlName="brand">
+        </div>
+        <div class="mb-3">
+          <label for="stock" class="form-label">Stock</label>
+          <input type="number" class="form-control" id="stock" formControlName="countStock">
+        </div>
+        <div class="mb-3">
+          <label for="rating" class="form-label">Rating</label>
+          <input type="number" class="form-control" id="rating" formControlName="rating">
+        </div>
+        <div class="mb-3">
+          <label for="rating" class="form-label">Thumbnail</label>
+          <input type="file" (change)="onSelectFile($event)" class="form-control" id="rating" formControlName="thumbnail">
+        </div>
+        <!-- <div class="mb-3">
+          <label for="created_at" class="form-label">Created At</label>
+          <input type="date" class="form-control" id="created_at" formControlName="created_at">
+        </div>
+        <div class="mb-3">
+          <label for="updated_at" class="form-label">Updated At</label>
+          <input type="date" class="form-control" id="updated_at" formControlName="updated_at">
+        </div> -->
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input type="number" class="form-control" id="price" formControlName="price">
+        </div>
+        <div class="mb-3">
+          <select class="form-select"  aria-label="Default select example" formControlName="category" name="category" id="category">
+            <option *ngFor="let cat of categories" [ngValue]="cat._id" >{{cat.label}}</option>
+          </select>
+        </div>
+
+        <div class="text-center">
+          <button type="submit"  class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>

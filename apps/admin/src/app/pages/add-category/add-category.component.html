@@ -1,0 +1,30 @@
+<div class="row mt-3">
+  <div class="col-md-6">
+    <div class="col-md-6 text-end"><a routerLink="/admin/category" class="btn btn-link"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a></div>
+  </div>
+  </div>
+<div class="row mt-5">
+  <div class="col-md-6 mx-auto">
+    <form >
+      <div class="form-group">
+        <label for="exampleInputEmail1">Label</label>
+        <input  [(ngModel)]="myCategory.label" name="label" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrer une categorie">
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      </div>
+      <div class="form-group mt-3">
+        <label for="exampleInputPassword1">icon</label>
+        <input [(ngModel)]="myCategory.icon" name="icon" type="text" class="form-control" id="exampleInputPassword1" placeholder="Entrer un icon">
+      </div>
+      <div class="form-group mt-3">
+        <label for="exampleInputPassword1">Color</label>
+        <input [(ngModel)]="myCategory.color" name="color" type="color" class="form-control" id="exampleInputPassword1" placeholder="Entrer une couleur">
+      </div>
+      <div class="row text-center mt-3">
+        <div class="col-ms-6 mx-auto">
+          <button (click)="saveCategory()" type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
